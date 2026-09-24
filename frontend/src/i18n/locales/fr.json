@@ -1,0 +1,83 @@
+{
+  "app": {
+    "name": "Biodiversité Madagascar"
+  },
+  "nav": {
+    "home": "Accueil",
+    "explorer": "Explorer",
+    "dashboard": "Tableau de bord",
+    "species": "Espèces",
+    "fauna": "Faune",
+    "flora": "Flore",
+    "map": "Carte de Madagascar",
+    "login": "Se connecter",
+    "blog": "Blog",
+    "about": "À propos",
+    "contact": "Contact",
+    "manage_species": "Gestion des espèces"
+  },
+  "hero": {
+    "title": "La biodiversité malgache, à ciel ouvert",
+    "subtitle": "Découverte, documentation et conservation de la faune et de la flore endémiques de Madagascar",
+    "cta": "Explorer"
+  },
+  "stats": {
+    "fauna": "Espèces de faune",
+    "flora": "Espèces de flore",
+    "categories": "Catégories",
+    "articles": "Articles"
+  },
+  "species": {
+    "search": "Rechercher par nom...",
+    "category": "Catégorie",
+    "family": "Famille",
+    "region": "Région",
+    "status": "Statut de conservation",
+    "details": "Voir le détail",
+    "download": "Télécharger la fiche",
+    "back": "Retour",
+    "no_results": "Aucun résultat trouvé"
+  },
+  "auth": {
+    "login": "Se connecter",
+    "register": "S'inscrire",
+    "logout": "Se déconnecter",
+    "email": "Email",
+    "password": "Mot de passe",
+    "name": "Nom",
+    "forgot_password": "Mot de passe oublié ?",
+    "pending": "En attente d'approbation par l'Admin",
+    "username_optional": "Pseudo (optionnel)",
+    "phone_optional": "Téléphone (optionnel)",
+    "confirm_password": "Confirmer",
+    "name_placeholder": "Votre nom complet",
+    "username_placeholder": "ex : ranou",
+    "phone_placeholder": "034 12 345 67",
+    "phone_invalid": "Numéro invalide — ex. : 034 12 345 67 ou +261 34 12 345 67",
+    "register_hint": "Votre compte sera activé après validation par un administrateur.",
+    "badge_login": "🌿 Bon retour",
+    "badge_register": "🌱 Nouveau membre",
+    "badge_reset": "🔑 Accès au compte",
+    "login_hint": "Retrouvez votre espace de contribution à la biodiversité malgache.",
+    "identifier": "Email ou pseudo",
+    "identifier_placeholder": "votre@email.mg ou pseudo",
+    "reset_hint": "Contactez l'administrateur pour obtenir un code temporaire, puis saisissez-le ci-dessous.",
+    "reset_code": "Code temporaire",
+    "reset_code_placeholder": "Ex : A1B2C3D4",
+    "new_password": "Nouveau mot de passe",
+    "panel_kicker": "Espace membre",
+    "panel_title": "Rejoignez le suivi de la biodiversité malgache",
+    "panel_text": "Documentez des espèces, partagez vos observations et contribuez à un inventaire vivant, ouvert à toute la communauté.",
+    "panel_quote": "« Chaque fiche remplie est un pas de plus pour comprendre — et protéger — ce sanctuaire naturel. »"
+  },
+  "buttons": {
+    "view_all": "Voir toutes les espèces",
+    "learn_more": "En savoir plus",
+    "submit": "Envoyer"
+  },
+  "footer": {
+    "tagline": "Documentation participative de la faune et de la flore endémiques de Madagascar.",
+    "motto": "Un patrimoine naturel qui ne doit jamais se perdre",
+    "rights": "Tous droits réservés"
+  }
+}

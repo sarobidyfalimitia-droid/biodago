@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1, h2, h3, h4 { @apply font-display; }
+
+  /* Sécurité globale : aucune image ne doit jamais déborder de son conteneur, même
+     sans classe explicite — s'applique à toutes les photos du Blog, Faune et Flore.
+     Les classes h-full/w-full/object-cover posées sur des images précises gardent
+     priorité (Tailwind charge après ce layer), ceci n'est qu'un filet de sécurité. */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer components {
+  /* Étiquette façon fiche de spécimen — conservée, mais adoucie dans un habillage plus chaleureux */
+  .specimen-tag {
+    @apply font-mono text-[11px] uppercase tracking-[0.14em] text-forest-600;
+  }
+
+  /* Boutons en pilule (inspiration "Olive Leaf") au lieu des coins nets d'origine */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-baobab-500 px-7 py-3.5
+           text-sm font-semibold text-white shadow-sm transition hover:bg-baobab-600 hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-95
+           focus:outline-none focus:ring-2 focus:ring-baobab-400 focus:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-forest-800
+           bg-transparent px-7 py-3.5 text-sm font-semibold text-forest-800 transition hover:bg-forest-800 hover:text-parchment-50 hover:-translate-y-0.5 active:translate-y-0 active:scale-95;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium;
+  }
+  /* Cartes aux coins généreusement arrondis, ombre douce */
+  .card {
+    @apply rounded-3xl border border-earth-100 bg-white shadow-sm transition hover:shadow-md;
+  }
+  .input {
+    @apply w-full rounded-2xl border border-earth-200 bg-white px-4 py-3 text-sm
+           focus:border-forest-500 focus:outline-none focus:ring-2 focus:ring-forest-200;
+  }
+  .field-divider {
+    @apply border-t border-dashed border-earth-300;
+  }
+  /* Bloc sombre arrondi façon "Discover our experiences" */
+  .block-feature {
+    @apply rounded-[2.5rem] bg-forest-900 text-parchment-50;
+  }
+
+  /* Texture papier/parchemin discrète — grain de bruit SVG très léger, à poser sur
+     n'importe quel conteneur qui a déjà sa propre couleur de fond (la texture s'ajoute
+     par-dessus sans effacer la couleur), pour sortir de l'aplat uni "générique". */
+  .paper-texture {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+  .paper-texture-dark {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  /* Fond « planche de feuilles dorées » du tableau de bord visiteur : tuile SVG
+     sans couture (public/images/leaf-motif.svg) + un voile crème au centre pour que
+     les textes / graphiques restent parfaitement lisibles + un fondu vers le
+     parchemin en haut (sous le header fixe) et en bas (raccord avec le footer).
+     Pour utiliser une autre planche (photo JPG, PNG…) : remplacer la dernière url()
+     par url('/images/leaf-motif.jpg') et ajuster le 3e background-size. */
+  .leaf-motif {
+    background-color: #f4ecd9;
+    background-image:
+      radial-gradient(82% 48% at 50% 30%, rgba(255, 253, 246, 0.72) 0%, rgba(255, 253, 246, 0.34) 46%, rgba(255, 253, 246, 0) 78%),
+      linear-gradient(180deg, rgba(251, 248, 241, 0.8) 0%, rgba(251, 248, 241, 0.18) 14%, rgba(251, 248, 241, 0) 58%, rgba(251, 248, 241, 0.96) 100%),
+      url('/images/leaf-motif.svg');
+    background-size: auto, auto, 720px 540px;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-position: center top, center, center;
+  }
+  @media (max-width: 640px) {
+    .leaf-motif { background-size: auto, auto, 460px 345px; }
+  }
+
+  /* Fond « papier feutré » des pages Blog visiteur (liste + article) : tuile SVG sans
+     couture (public/images/felt-paper.svg) — gris-crème clair, fibres fines et plis
+     doux, comme une feuille de feutre. Le voile radial éclaircit le centre pour que
+     les titres et le fil d'ariane restent nets, les voiles haut/bas raccordent le fond
+     avec le header fixe et le footer en parchemin.
+     Pour utiliser une autre texture (photo JPG, PNG…) : remplacer l'url() finale par
+     url('/images/felt-paper.jpg') et ajuster le dernier background-size. */
+  .felt-paper {
+    background-color: #f1efea;
+    background-image:
+      radial-gradient(72% 42% at 50% 22%, rgba(255, 255, 253, 0.44) 0%, rgba(255, 255, 253, 0.14) 52%, rgba(255, 255, 253, 0) 84%),
+      linear-gradient(180deg, rgba(251, 248, 241, 0.9) 0%, rgba(251, 248, 241, 0.24) 11%, rgba(251, 248, 241, 0) 30%, rgba(251, 248, 241, 0) 74%, rgba(251, 248, 241, 0.95) 100%),
+      url('/images/felt-paper.svg');
+    background-size: auto, auto, 520px 520px;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-position: center top, center, center;
+  }
+  @media (max-width: 640px) {
+    .felt-paper { background-size: auto, auto, 380px 380px; }
+  }
+
+  /* Fond « taches & courbes » de l'accueil visiteur : tuile SVG sans couture
+     (public/images/warm-blobs.svg) — papier crème, grande tache taupe entrant par le
+     bord gauche, tache beige entrant par le bord droit, deux fines courbes brunes.
+     Aucune forme ne touche les bords haut/bas de la tuile : le pavage vertical se fait
+     donc sans raccord visible. La tuile est étirée à 100% de la largeur (auto en
+     hauteur) pour que les taches restent toujours coupées par les bords de l'écran.
+     Le halo crème éclaircit uniquement la zone du titre du hero (rayon en px/vw, donc
+     plus petit sur mobile) pour garantir la lisibilité ; les fondus haut/bas raccordent
+     le fond avec le header fixe et le footer en parchemin.
+     Pour utiliser une autre planche (photo JPG, PNG…) : remplacer l'url() finale. */
+  .blob-motif {
+    background-color: #fdf4e8;
+    background-image:
+      radial-gradient(circle max(320px, 46vw) at 6% 190px, rgba(255, 253, 247, 0.52) 0%, rgba(255, 253, 247, 0.2) 54%, rgba(255, 253, 247, 0) 100%),
+      linear-gradient(180deg, rgba(252, 249, 242, 0.9) 0%, rgba(252, 249, 242, 0.3) 8%, rgba(252, 249, 242, 0) 22%, rgba(252, 249, 242, 0) 78%, rgba(252, 249, 242, 0.93) 100%),
+      url('/images/warm-blobs.svg');
+    background-size: auto, auto, 100% auto;
+    background-repeat: no-repeat, no-repeat, repeat-y;
+    background-position: center top, center top, center top;
+  }
+
+  /* Défilement infini du bandeau des statuts de conservation (façon "bandeau partenaires") */
+  .marquee-track {
+    animation: marquee-scroll 22s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* Curseur personnalisé en forme de feuille sur la carte de Madagascar */
+  .leaflet-map-leaf-cursor {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24'><path fill='%23166534' d='M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66l.95-2.3C7.46 20.04 9 20.5 10.34 20.5c1.5 0 3.05-.53 4.51-1.66C18.09 16.65 20 12.8 20 8c0 0-1 0-3 0Z'/></svg>") 4 20, pointer;
+  }
+
+  /* Barre de progression de lecture sur les articles de blog */
+  .reading-progress-bar {
+    @apply fixed left-0 top-0 z-50 h-1 bg-baobab-500 transition-[width] duration-150 ease-out;
+  }
+
+  /* Fondu doux à l'arrivée sur une page (et au changement de langue) — appliqué sur <main>
+     par PublicLayout, remonté à chaque navigation. Pur fondu, sans transform, pour ne pas
+     perturber les éléments position:fixed de la page (barre de progression de lecture…). */
+  .i18n-fade {
+    animation: i18n-fade-in 0.5s ease-out;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .i18n-fade { animation: none; }
+  }
+
+  /* L'illustration du hero "respire" très légèrement au lieu de rester parfaitement figée */
+  .hero-breathe {
+    animation: hero-breathe 6s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-breathe { animation: none; }
+  }
+
+  /* Barres de graphique qui "poussent" avec un léger rebond au lieu d'une simple croissance linéaire */
+  .bar-spring {
+    transition: width 900ms cubic-bezier(0.34, 1.56, 0.64, 1), transform 900ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bar-spring { transition: none; }
+  }
+
+  /* Compteur façon odomètre mécanique : chiffres qui défilent verticalement */
+  .odometer { display: inline-flex; font-family: "IBM Plex Mono", monospace; }
+  .odometer-digit { display: inline-block; height: 1em; width: 0.62em; overflow: hidden; position: relative; }
+  .odometer-track {
+    display: flex; flex-direction: column;
+    transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .odometer-num { height: 1em; line-height: 1; display: flex; align-items: center; justify-content: center; }
+  @media (prefers-reduced-motion: reduce) {
+    .odometer-track { transition: none; }
+  }
+
+  /* Thème sombre — sous-bois nocturne (page de connexion).
+     Dégradés empilés : lueur verte en haut à gauche, lueur ambrée à droite,
+     vert profond en bas, le tout sur une diagonale forest-950 → forest-800. */
+  .backdrop-night {
+    background-color: #081a11;
+    background-image:
+      radial-gradient(95% 60% at 6% -6%, rgba(54, 125, 80, 0.6) 0%, rgba(54, 125, 80, 0) 62%),
+      radial-gradient(75% 55% at 104% 10%, rgba(194, 102, 29, 0.32) 0%, rgba(194, 102, 29, 0) 58%),
+      radial-gradient(110% 65% at 50% 116%, rgba(31, 78, 51, 0.9) 0%, rgba(31, 78, 51, 0) 72%),
+      linear-gradient(165deg, #081a11 0%, #0f2a1c 42%, #1a3f2a 100%);
+  }
+
+  /* Courbes de niveau en filigrane (SVG encodé en dur, tuile 360×240, se répète sans
+     couture). Pour changer la couleur du tracé : modifier %23b3d6bd (#b3d6bd) ci-dessous. */
+  .topo-lines-light {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'360'%20height%3D'240'%20viewBox%3D'0%200%20360%20240'%3E%3Cg%20fill%3D'none'%20stroke%3D'%23b3d6bd'%20stroke-width%3D'1.2'%20stroke-linecap%3D'round'%3E%3Cpath%20d%3D'M0%200%20C45%20-10%20135%2010%20180%200%20C225%20-10%20315%2010%20360%200'%2F%3E%3Cpath%20d%3D'M0%2024%20C45%2031%20135%2017%20180%2024%20C225%2031%20315%2017%20360%2024'%2F%3E%3Cpath%20d%3D'M0%2048%20C45%2036%20135%2060%20180%2048%20C225%2036%20315%2060%20360%2048'%2F%3E%3Cpath%20d%3D'M0%2072%20C45%2081%20135%2063%20180%2072%20C225%2081%20315%2063%20360%2072'%2F%3E%3Cpath%20d%3D'M0%2096%20C45%2086%20135%20106%20180%2096%20C225%2086%20315%20106%20360%2096'%2F%3E%3Cpath%20d%3D'M0%20120%20C45%20128%20135%20112%20180%20120%20C225%20128%20315%20112%20360%20120'%2F%3E%3Cpath%20d%3D'M0%20144%20C45%20133%20135%20155%20180%20144%20C225%20133%20315%20155%20360%20144'%2F%3E%3Cpath%20d%3D'M0%20168%20C45%20175%20135%20161%20180%20168%20C225%20175%20315%20161%20360%20168'%2F%3E%3Cpath%20d%3D'M0%20192%20C45%20180%20135%20204%20180%20192%20C225%20180%20315%20204%20360%20192'%2F%3E%3Cpath%20d%3D'M0%20216%20C45%20224%20135%20208%20180%20216%20C225%20224%20315%20208%20360%20216'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    background-size: 360px 240px;
+    opacity: 0.22;
+  }
+
+  /* Halo organique flou. Taille/position passées en style inline (LoginBackdrop.jsx),
+     la dérive est désynchronisée par un animationDelay négatif (jamais synchrone). */
+  .canopy-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(84px);
+    animation: blob-drift 32s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  /* Rais de lumière traversant la végétation. Teinte injectée via la variable CSS
+     --ray-color (repli sur un blanc crème). */
+  .canopy-ray {
+    background-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--ray-color, rgba(255, 249, 233, 0.5)) 45%,
+      transparent 100%
+    );
+    filter: blur(46px);
+    animation: ray-glow 22s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .canopy-blob, .canopy-ray { animation: none; }
+  }
+}
+
+@keyframes blob-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  33%  { transform: translate3d(2.5%, -3.5%, 0) scale(1.07); }
+  66%  { transform: translate3d(-2.5%, 2.5%, 0) scale(0.95); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes ray-glow {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 0.85; }
+}
+
+@keyframes hero-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.015); }
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes i18n-fade-in {
+  from { opacity: 0.15; }
+  to { opacity: 1; }
+}

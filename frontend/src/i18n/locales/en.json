@@ -1,0 +1,83 @@
+{
+  "app": {
+    "name": "Madagascar Biodiversity"
+  },
+  "nav": {
+    "home": "Home",
+    "explorer": "Explore",
+    "dashboard": "Dashboard",
+    "species": "Species",
+    "fauna": "Fauna",
+    "flora": "Flora",
+    "map": "Map of Madagascar",
+    "login": "Log in",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "manage_species": "Species management"
+  },
+  "hero": {
+    "title": "Madagascar's biodiversity, in the open",
+    "subtitle": "Discover, document and help conserve Madagascar's endemic fauna and flora",
+    "cta": "Explore"
+  },
+  "stats": {
+    "fauna": "Fauna species",
+    "flora": "Flora species",
+    "categories": "Categories",
+    "articles": "Articles"
+  },
+  "species": {
+    "search": "Search by name...",
+    "category": "Category",
+    "family": "Family",
+    "region": "Region",
+    "status": "Conservation status",
+    "details": "View details",
+    "download": "Download fact sheet",
+    "back": "Back",
+    "no_results": "No results found"
+  },
+  "auth": {
+    "login": "Log in",
+    "register": "Sign up",
+    "logout": "Log out",
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "forgot_password": "Forgot password?",
+    "pending": "Awaiting admin approval",
+    "username_optional": "Username (optional)",
+    "phone_optional": "Phone (optional)",
+    "confirm_password": "Confirm",
+    "name_placeholder": "Your full name",
+    "username_placeholder": "e.g. ranou",
+    "phone_placeholder": "034 12 345 67",
+    "phone_invalid": "Invalid number — e.g. 034 12 345 67 or +261 34 12 345 67",
+    "register_hint": "Your account will be activated once an administrator approves it.",
+    "badge_login": "🌿 Welcome back",
+    "badge_register": "🌱 New member",
+    "badge_reset": "🔑 Account access",
+    "login_hint": "Find your contribution space for Malagasy biodiversity.",
+    "identifier": "Email or username",
+    "identifier_placeholder": "your@email.mg or username",
+    "reset_hint": "Ask the administrator for a temporary code, then enter it below.",
+    "reset_code": "Temporary code",
+    "reset_code_placeholder": "e.g. A1B2C3D4",
+    "new_password": "New password",
+    "panel_kicker": "Member area",
+    "panel_title": "Join the monitoring of Malagasy biodiversity",
+    "panel_text": "Document species, share your observations and help build a living inventory, open to the whole community.",
+    "panel_quote": "“Every completed record is one more step towards understanding — and protecting — this natural sanctuary.”"
+  },
+  "buttons": {
+    "view_all": "View all species",
+    "learn_more": "Learn more",
+    "submit": "Submit"
+  },
+  "footer": {
+    "tagline": "Participatory documentation of Madagascar's endemic fauna and flora.",
+    "motto": "A natural heritage that must never be lost",
+    "rights": "All rights reserved"
+  }
+}

@@ -1,0 +1,787 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "analamanga",
+        "name": "Analamanga"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.75,
+              -19.45
+            ],
+            [
+              47.849999999999994,
+              -19.45
+            ],
+            [
+              47.849999999999994,
+              -18.349999999999998
+            ],
+            [
+              46.75,
+              -18.349999999999998
+            ],
+            [
+              46.75,
+              -19.45
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "atsinanana",
+        "name": "Atsinanana"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              48.650000000000006,
+              -18.85
+            ],
+            [
+              49.75,
+              -18.85
+            ],
+            [
+              49.75,
+              -17.75
+            ],
+            [
+              48.650000000000006,
+              -17.75
+            ],
+            [
+              48.650000000000006,
+              -18.85
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "boeny",
+        "name": "Boeny"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.150000000000006,
+              -16.55
+            ],
+            [
+              47.25,
+              -16.55
+            ],
+            [
+              47.25,
+              -15.45
+            ],
+            [
+              46.150000000000006,
+              -15.45
+            ],
+            [
+              46.150000000000006,
+              -16.55
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "anosy",
+        "name": "Anosy"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.25,
+              -25.35
+            ],
+            [
+              47.349999999999994,
+              -25.35
+            ],
+            [
+              47.349999999999994,
+              -24.25
+            ],
+            [
+              46.25,
+              -24.25
+            ],
+            [
+              46.25,
+              -25.35
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "menabe",
+        "name": "Menabe"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.25,
+              -20.35
+            ],
+            [
+              45.349999999999994,
+              -20.35
+            ],
+            [
+              45.349999999999994,
+              -19.25
+            ],
+            [
+              44.25,
+              -19.25
+            ],
+            [
+              44.25,
+              -20.35
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "vakinankaratra",
+        "name": "Vakinankaratra"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.35,
+              -20.35
+            ],
+            [
+              47.449999999999996,
+              -20.35
+            ],
+            [
+              47.449999999999996,
+              -19.25
+            ],
+            [
+              46.35,
+              -19.25
+            ],
+            [
+              46.35,
+              -20.35
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "itasy",
+        "name": "Itasy"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.150000000000006,
+              -19.55
+            ],
+            [
+              47.25,
+              -19.55
+            ],
+            [
+              47.25,
+              -18.45
+            ],
+            [
+              46.150000000000006,
+              -18.45
+            ],
+            [
+              46.150000000000006,
+              -19.55
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "bongolava",
+        "name": "Bongolava"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.150000000000006,
+              -19.150000000000002
+            ],
+            [
+              46.25,
+              -19.150000000000002
+            ],
+            [
+              46.25,
+              -18.05
+            ],
+            [
+              45.150000000000006,
+              -18.05
+            ],
+            [
+              45.150000000000006,
+              -19.150000000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "sofia",
+        "name": "Sofia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.45,
+              -15.450000000000001
+            ],
+            [
+              48.55,
+              -15.450000000000001
+            ],
+            [
+              48.55,
+              -14.35
+            ],
+            [
+              47.45,
+              -14.35
+            ],
+            [
+              47.45,
+              -15.450000000000001
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "betsiboka",
+        "name": "Betsiboka"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.150000000000006,
+              -17.35
+            ],
+            [
+              47.25,
+              -17.35
+            ],
+            [
+              47.25,
+              -16.25
+            ],
+            [
+              46.150000000000006,
+              -16.25
+            ],
+            [
+              46.150000000000006,
+              -17.35
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "melaky",
+        "name": "Melaky"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.25,
+              -19.05
+            ],
+            [
+              45.349999999999994,
+              -19.05
+            ],
+            [
+              45.349999999999994,
+              -17.95
+            ],
+            [
+              44.25,
+              -17.95
+            ],
+            [
+              44.25,
+              -19.05
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "alaotra-mangoro",
+        "name": "Alaotra-Mangoro"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.85,
+              -18.25
+            ],
+            [
+              48.949999999999996,
+              -18.25
+            ],
+            [
+              48.949999999999996,
+              -17.15
+            ],
+            [
+              47.85,
+              -17.15
+            ],
+            [
+              47.85,
+              -18.25
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "analanjirofo",
+        "name": "Analanjirofo"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              49.050000000000004,
+              -17.45
+            ],
+            [
+              50.15,
+              -17.45
+            ],
+            [
+              50.15,
+              -16.349999999999998
+            ],
+            [
+              49.050000000000004,
+              -16.349999999999998
+            ],
+            [
+              49.050000000000004,
+              -17.45
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "atsimo-atsinanana",
+        "name": "Atsimo-Atsinanana"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.050000000000004,
+              -23.45
+            ],
+            [
+              48.15,
+              -23.45
+            ],
+            [
+              48.15,
+              -22.349999999999998
+            ],
+            [
+              47.050000000000004,
+              -22.349999999999998
+            ],
+            [
+              47.050000000000004,
+              -23.45
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "ihorombe",
+        "name": "Ihorombe"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.550000000000004,
+              -22.75
+            ],
+            [
+              46.65,
+              -22.75
+            ],
+            [
+              46.65,
+              -21.65
+            ],
+            [
+              45.550000000000004,
+              -21.65
+            ],
+            [
+              45.550000000000004,
+              -22.75
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "atsimo-andrefana",
+        "name": "Atsimo-Andrefana"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.45,
+              -23.85
+            ],
+            [
+              44.55,
+              -23.85
+            ],
+            [
+              44.55,
+              -22.75
+            ],
+            [
+              43.45,
+              -22.75
+            ],
+            [
+              43.45,
+              -23.85
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "androy",
+        "name": "Androy"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.35,
+              -25.55
+            ],
+            [
+              46.449999999999996,
+              -25.55
+            ],
+            [
+              46.449999999999996,
+              -24.45
+            ],
+            [
+              45.35,
+              -24.45
+            ],
+            [
+              45.35,
+              -25.55
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "vatovavy",
+        "name": "Vatovavy"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.25,
+              -21.95
+            ],
+            [
+              48.349999999999994,
+              -21.95
+            ],
+            [
+              48.349999999999994,
+              -20.849999999999998
+            ],
+            [
+              47.25,
+              -20.849999999999998
+            ],
+            [
+              47.25,
+              -21.95
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "fitovinany",
+        "name": "Fitovinany"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.45,
+              -21.85
+            ],
+            [
+              48.55,
+              -21.85
+            ],
+            [
+              48.55,
+              -20.75
+            ],
+            [
+              47.45,
+              -20.75
+            ],
+            [
+              47.45,
+              -21.85
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "amoroni-mania",
+        "name": "Amoron'i Mania"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.650000000000006,
+              -20.75
+            ],
+            [
+              47.75,
+              -20.75
+            ],
+            [
+              47.75,
+              -19.65
+            ],
+            [
+              46.650000000000006,
+              -19.65
+            ],
+            [
+              46.650000000000006,
+              -20.75
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "haute-matsiatra",
+        "name": "Haute Matsiatra"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.45,
+              -21.95
+            ],
+            [
+              47.55,
+              -21.95
+            ],
+            [
+              47.55,
+              -20.849999999999998
+            ],
+            [
+              46.45,
+              -20.849999999999998
+            ],
+            [
+              46.45,
+              -21.95
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "diana",
+        "name": "Diana"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              48.75,
+              -13.55
+            ],
+            [
+              49.849999999999994,
+              -13.55
+            ],
+            [
+              49.849999999999994,
+              -12.45
+            ],
+            [
+              48.75,
+              -12.45
+            ],
+            [
+              48.75,
+              -13.55
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "geojson_id": "sava",
+        "name": "Sava"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              49.35,
+              -14.850000000000001
+            ],
+            [
+              50.449999999999996,
+              -14.850000000000001
+            ],
+            [
+              50.449999999999996,
+              -13.75
+            ],
+            [
+              49.35,
+              -13.75
+            ],
+            [
+              49.35,
+              -14.850000000000001
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

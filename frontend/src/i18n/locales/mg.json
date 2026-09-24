@@ -1,0 +1,83 @@
+{
+  "app": {
+    "name": "Biodiversité Madagasikara"
+  },
+  "nav": {
+    "home": "Fandraisana",
+    "explorer": "Fikarohana",
+    "dashboard": "Tabilao fitantanana",
+    "species": "Zavamananaina",
+    "fauna": "Biby",
+    "flora": "Zava-maniry",
+    "map": "Sarintanin'i Madagasikara",
+    "login": "Hiditra",
+    "blog": "Vaovao",
+    "about": "Momba anay",
+    "contact": "Fifandraisana",
+    "manage_species": "Fitantanana zavamananaina"
+  },
+  "hero": {
+    "title": "Fahasamihafan'ny zavamananaina malagasy",
+    "subtitle": "Fikarohana, fanoratana ary fiarovana ny biby sy zava-maniry endemika any Madagasikara",
+    "cta": "Fikarohana"
+  },
+  "stats": {
+    "fauna": "Karazam-biby",
+    "flora": "Karazam-boninkazo",
+    "categories": "Sokajy",
+    "articles": "Lahatsoratra"
+  },
+  "species": {
+    "search": "Karohy amin'ny anarana...",
+    "category": "Sokajy",
+    "family": "Fianakaviana",
+    "region": "Faritra",
+    "status": "Sata fiarovana",
+    "details": "Fizahana antsipiriany",
+    "download": "Alao PDF",
+    "back": "Miverina",
+    "no_results": "Tsy misy vokatra hita"
+  },
+  "auth": {
+    "login": "Hiditra",
+    "register": "Hisoratra anarana",
+    "logout": "Hivoaka",
+    "email": "Mailaka",
+    "password": "Tenimiafina",
+    "name": "Anarana",
+    "forgot_password": "Very tenimiafina?",
+    "pending": "Miandry fankatoavan'ny Admin",
+    "username_optional": "Solon'anarana (tsy voatery)",
+    "phone_optional": "Finday (tsy voatery)",
+    "confirm_password": "Hamafiso",
+    "name_placeholder": "Ny anaranao feno",
+    "username_placeholder": "ohatra : ranou",
+    "phone_placeholder": "034 12 345 67",
+    "phone_invalid": "Tsy mety ny nomerao — ohatra : 034 12 345 67 na +261 34 12 345 67",
+    "register_hint": "Hohamarin'ny mpitantana vao ho velona ny kaontinao.",
+    "badge_login": "🌿 Tongasoa indray",
+    "badge_register": "🌱 Mpikambana vaovao",
+    "badge_reset": "🔑 Hidirana amin'ny kaonty",
+    "login_hint": "Tadiavo ny sehatra andraisanao anjara amin'ny zavamananaina malagasy.",
+    "identifier": "Mailaka na solon'anarana",
+    "identifier_placeholder": "mailaka@ohatra.mg na solon'anarana",
+    "reset_hint": "Mifandraisa amin'ny mpitantana mba hahazoana kaody vonjimaika, dia ampidiro eto izy io.",
+    "reset_code": "Kaody vonjimaika",
+    "reset_code_placeholder": "Ohatra : A1B2C3D4",
+    "new_password": "Tenimiafina vaovao",
+    "panel_kicker": "Sehatry ny mpikambana",
+    "panel_title": "Mandraisa anjara amin'ny fanaraha-maso ny zavamananaina malagasy",
+    "panel_text": "Soraty ny karazana biby sy zava-maniry, zarao ny fandinihanao ary mandraisa anjara amin'ny fanisana velona, misokatra ho an'ny rehetra.",
+    "panel_quote": "« Ny taratasy feno tsirairay dia dingana iray hahatakarana — sy hiaro — ity toeram-piarovana voajanahary ity. »"
+  },
+  "buttons": {
+    "view_all": "Hijery daholo",
+    "learn_more": "Fantaro bebe kokoa",
+    "submit": "Alefa"
+  },
+  "footer": {
+    "tagline": "Fandraisan'anjaran'ny daholobe amin'ny fanoratana ny biby sy zava-maniry endemika any Madagasikara.",
+    "motto": "Ny harena voajanahary tsy very",
+    "rights": "Zo rehetra voatokana"
+  }
+}

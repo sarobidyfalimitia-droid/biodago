@@ -1,0 +1,42 @@
+# --- Dépendances (à installer par chacun : npm install / composer install) ---
+frontend/node_modules/
+backend/vendor/
+
+# --- Fichiers d'environnement et secrets ---
+backend/.env
+frontend/.env
+frontend/.env.local
+*.local
+
+# --- Artefacts de build (régénérés) ---
+frontend/dist/
+backend/generated/
+backend/cache/
+
+# --- Images envoyées (CONSERVÉES dans le dépôt : nécessaires au site démo) ---
+# Les dossiers backend/uploads/{blogs,fauna,flora,...}/{large,thumb} sont volontairement
+# versionnés pour que les espèces/articles déjà illustrés s'affichent après un clone.
+
+# --- Logs, temporaires, tests jetables ---
+*.log
+*.tmp
+*.tmp.mjs
+backend/test_blog_create.php
+
+# --- Déchets du système d'exploitation ---
+Thumbs.db
+ehthumbs.db
+desktop.ini
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+*.swp
+
+# --- Éditeurs ---
+.vscode/*
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

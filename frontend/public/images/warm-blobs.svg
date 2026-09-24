@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="2880" viewBox="0 0 1440 2880">
+  <!--
+    Tuile « taches & courbes » — arrière-plan de l'accueil visiteur.
+    Composition reprise de l'illustration de référence : papier crème, grande tache
+    taupe entrant par le bord gauche, tache beige entrant par le bord droit, fines
+    courbes brunes qui traversent la page.
+    Les formes ne touchent JAMAIS les bords haut et bas (1440 × 2880) : la répétition
+    verticale (background-repeat: repeat-y) est donc parfaitement invisible. Le format
+    volontairement très haut (1:2) garde de larges plages de crème entre les taches,
+    comme sur la référence.
+    Les taches sont coupées par les bords gauche/droit, comme sur la référence : elles
+    se fondent ainsi dans les bords de l'écran.
+    Palette : crème #fdf4e8 · taupe #bd9e8f → #a8877a · beige #ecddc9 → #d8c2a6 ·
+    trait brun #7c5130.
+  -->
+  <defs>
+    <linearGradient id="taupe" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#bd9e8f" />
+      <stop offset="0.55" stop-color="#b3927f" />
+      <stop offset="1" stop-color="#a8877a" />
+    </linearGradient>
+    <linearGradient id="beige" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ecddc9" />
+      <stop offset="0.5" stop-color="#e3d1b8" />
+      <stop offset="1" stop-color="#d8c2a6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Papier crème -->
+  <rect width="1440" height="2880" fill="#fdf4e8" />
+
+  <!-- Tache taupe, entrée par le bord gauche (haut de tuile) -->
+  <path fill="url(#taupe)" d="M-180 172 C-40 98 152 82 268 148 C336 186 330 236 392 276
+       C464 322 500 400 448 472 C400 538 342 570 348 634 C354 704 296 764 202 780
+       C108 796 0 774 -120 782 C-260 792 -300 420 -286 300 C-272 208 -240 196 -180 172 Z" />
+  <path fill="#a3836f" opacity="0.35" d="M-160 300 C-40 262 120 268 250 300 C330 320 372 366 384 420
+       C300 386 160 372 -20 384 C-90 388 -140 386 -170 380 C-200 374 -200 316 -160 300 Z" />
+  <path fill="#d3b7a6" opacity="0.45" d="M-120 620 C-10 590 120 592 236 616 C300 630 330 660 344 692
+       C240 668 110 662 -30 674 C-80 678 -110 674 -130 668 C-152 662 -158 630 -120 620 Z" />
+
+  <!-- Tache beige, entrée par le bord droit (bas de tuile) -->
+  <path fill="url(#beige)" d="M1440 1868 C1332 1910 1198 1972 1124 2072 C1062 2156 1054 2252 1102 2338
+       C1150 2424 1182 2506 1272 2576 C1332 2620 1398 2642 1440 2648 Z" />
+  <path fill="#cdb494" opacity="0.35" d="M1440 2140 C1372 2198 1318 2264 1310 2336 C1302 2412 1340 2484 1400 2540
+       C1420 2558 1434 2568 1440 2572 Z" />
+
+  <!-- Fines courbes brunes -->
+  <g fill="none" stroke="#7c5130" stroke-width="3.4" stroke-linecap="round">
+    <path d="M-60 92 C120 26 262 56 384 140 C494 216 606 258 726 232 C846 206 966 190 1086 214
+         C1206 238 1330 262 1470 300" />
+    <path d="M1470 2016 C1300 2074 1150 2132 1012 2230 C878 2324 752 2376 628 2426
+         C500 2478 322 2504 148 2484 C44 2472 -60 2464 -140 2470" />
+  </g>
+</svg>
