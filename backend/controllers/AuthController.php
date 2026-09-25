@@ -75,7 +75,7 @@ class AuthController
         }
 
         if ($user['status'] === 'pending') {
-            Response::error('Compte en attente d\'approbation par l\'administrateur', 'AUTH_PENDING', 403);
+            Response::error('Votre connexion est en attente d\'approbation. Veuillez réessayer après 24h.', 'AUTH_PENDING', 403);
         }
         if ($user['status'] === 'rejected' || $user['status'] === 'suspended') {
             Response::error('Compte refusé ou suspendu. Contactez l\'administrateur.', 'AUTH_BLOCKED', 403);
