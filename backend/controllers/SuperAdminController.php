@@ -81,13 +81,21 @@ class SuperAdminController
         Response::success([], 'Compte supprimé');
     }
 
-    /** Un SuperAdmin peut créer directement un autre compte SuperAdmin ou Admin (déjà actif, pas de "pending"). */
+    /**
+     * Un SuperAdmin peut créer directement un autre compte SuperAdmin ou Admin
+     * (déjà actif, pas de statut "pending").
+     *
+     * Le formulaire reprend EXACTEMENT les champs de l'inscription publique
+     * (nom, pseudo, email, téléphone, mot de passe + confirmation) afin que le compte
+     * créé ici puisse se connecter par email OU par pseudo, comme n'importe quel
+     * utilisateur — et que les mêmes contrôles s'appliquent dans les deux cas.
+     */
     public function createAccount(): void
     {
         AuthMiddleware::requireSuperAdmin();
         $db = Database::connect();
         $body = json_decode(file_get_contents('php://input'), true) ?: [];
-        Validator::required($body, ['name', 'email', 'password', 'role']);
+        Validator::required($body, ['name', 'email', 'password', 'password_confirmation', 'role']);
 
         if (!in_array($body['role'], ['admin', 'superadmin'], true)) {
             Response::error('Ce point d\'entrée ne crée que des comptes Admin ou SuperAdmin', 'VALIDATION_422', 422);
@@ -95,21 +103,59 @@ class SuperAdminController
         if (!Validator::email($body['email'])) {
             Response::error('Email invalide', 'VALIDATION_422', 422);
         }
+        if ($body['password'] !== $body['password_confirmation']) {
+            Response::error('Les mots de passe ne correspondent pas', 'VALIDATION_422', 422);
+        }
         if (strlen($body['password']) < 8) {
             Response::error('Le mot de passe doit contenir au moins 8 caractères', 'VALIDATION_422', 422);
+        }
+
+        // Pseudo facultatif (comme à l'inscription) mais contrôlé s'il est fourni :
+        // 3 à 50 caractères, lettres/chiffres/./_/-. C'est ce pseudo que
+        // AuthController::login utilise dans « WHERE email = ? OR username = ? ».
+        $username = isset($body['username']) ? trim((string) $body['username']) : null;
+        if ($username === '') $username = null;
+        if ($username !== null && !preg_match('/^[a-zA-Z0-9_.-]{3,50}$/', $username)) {
+            Response::error('Pseudo invalide (3 à 50 caractères, lettres/chiffres/./_/- uniquement)', 'VALIDATION_422', 422);
+        }
+
+        // Téléphone facultatif : contrôle souple identique au frontend (utils/phone.js).
+        $phone = self::normalizePhone($body['phone'] ?? null);
+        if ($phone !== null && !preg_match('/^(?:\+|00)?\d{7,15}$/', $phone)) {
+            Response::error('Numéro de téléphone invalide (7 à 15 chiffres)', 'VALIDATION_422', 422);
         }
 
         $stmt = $db->prepare('SELECT id FROM users WHERE email = ?');
         $stmt->execute([$body['email']]);
         if ($stmt->fetch()) Response::error('Cet email est déjà utilisé', 'AUTH_409', 409);
 
+        if ($username !== null) {
+            $stmt = $db->prepare('SELECT id FROM users WHERE username = ?');
+            $stmt->execute([$username]);
+            if ($stmt->fetch()) Response::error('Ce pseudo est déjà utilisé', 'AUTH_409', 409);
+        }
+
         $hash = password_hash($body['password'], PASSWORD_DEFAULT);
         $stmt = $db->prepare(
             'INSERT INTO users (name, username, email, phone, password_hash, role, status)
              VALUES (?,?,?,?,?,?,"active")'
         );
-        $stmt->execute([$body['name'], $body['username'] ?? null, $body['email'], $body['phone'] ?? null, $hash, $body['role']]);
+        $stmt->execute([trim((string) $body['name']), $username, $body['email'], $phone, $hash, $body['role']]);
 
-        Response::success(['id' => $db->lastInsertId()], 'Compte créé', 201);
+        Response::success(['id' => (int) $db->lastInsertId()], 'Compte créé', 201);
+    }
+
+    /**
+     * Même normalisation que le formulaire d'inscription : chiffres seuls, les formes
+     * internationales malgaches (+261…, 00261…, 261…) reviennent à « 0XXXXXXXXX »,
+     * les autres pays gardent leur « + ». Retourne null si vide.
+     */
+    private static function normalizePhone($value): ?string
+    {
+        $cleaned = preg_replace('/[\s.\-\/()_]/', '', (string) ($value ?? ''));
+        if ($cleaned === '') return null;
+        if (preg_match('/^(?:\+|00)?261(\d{9})$/', $cleaned, $m)) return '0' . $m[1];
+        if (str_starts_with($cleaned, '+')) return '+' . str_replace('+', '', $cleaned);
+        return $cleaned;
     }
 }

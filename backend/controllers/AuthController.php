@@ -138,7 +138,9 @@ class AuthController
 
         $code = strtoupper(bin2hex(random_bytes(4))); // ex: A1B2C3D4
         $hash = password_hash($code, PASSWORD_DEFAULT);
-        $expiresAt = (new DateTime('+30 minutes'))->format('Y-m-d H:i:s');
+        // Utiliser la même horloge que la vérification SQL (NOW()) évite un
+        // décalage lorsque le fuseau PHP diffère de celui de MySQL.
+        $expiresAt = $db->query('SELECT DATE_ADD(NOW(), INTERVAL 30 MINUTE)')->fetchColumn();
 
         $stmt = $db->prepare(
             'INSERT INTO password_resets (user_id, code_hash, expires_at, used) VALUES (?, ?, ?, 0)'
